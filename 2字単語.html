@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>謎解き</title>
+  <style>
+    body {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .cell {
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .content {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .center {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="cell" style="grid-row: 1; grid-column: 1;">
+    <div class="content">
+      清<br>
+      ↓<br>
+      浸 → <strong>ア</strong> → 面<br>
+      ↓<br>
+      槽
+    </div>
+  </div>
+
+  <div class="cell" style="grid-row: 1; grid-column: 3;">
+    <div class="content">
+      苦<br>
+      ↓<br>
+      国 → <strong>イ</strong> → 餅<br>
+      ↓<br>
+      内
+    </div>
+  </div>
+
+  <div class="cell" style="grid-row: 3; grid-column: 1;">
+    <div class="content">
+      歳<br>
+      ↓<br>
+      六 → <strong>ウ</strong> → 見<br>
+      ↓<br>
+      給
+    </div>
+  </div>
+
+  <div class="cell" style="grid-row: 3; grid-column: 3;">
+    <div class="content">
+      綿<br>
+      ↓<br>
+      火 → <strong>エ</strong> → 壇<br>
+      ↓<br>
+      粉
+    </div>
+  </div>
+
+  <div class="cell center" style="grid-row: 2; grid-column: 2;">
+    四方の問題は全て２字の単語になっている。<br>
+    ア、イ、ウ、エの答えを並び替え四字熟語を作りなさい
+      </div>
+
+      <div class="cell" style="grid-row: 3; grid-column: 2;">
+        答えを数字に変え和が答えとなる<br>
+        <p style="opacity: 0.05;">ヒントが欲しかったらなにかしましょう</p>
+      </div>
+</body>
+</html>
