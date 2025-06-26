@@ -7,7 +7,7 @@ app = FastAPI()
 app.mount("/", StaticFiles(directory="static", html=True), name="static")
 
 class LoginRequest(BaseModel):
-    password: str
+    password: int
   
 @app.post("/api/answer")
 async def login(req: LoginRequest):
