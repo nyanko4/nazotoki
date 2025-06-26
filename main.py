@@ -1,10 +1,6 @@
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
-import os
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
-@app.get("/")
-async def read_index():
-    file_path = os.path.join(os.path.dirname(__file__), "index.html")
-    return FileResponse(file_path)
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
