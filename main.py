@@ -10,7 +10,7 @@ class LoginRequest(BaseModel):
     password: int
   
 @app.post("/api/anser")
-async def login(req: password):
+async def login(req: LoginRequest):
     if req.password == 417:
         return {"message": "クリア！写真撮って送りましょう(無理そうならなんか恥ずかしいセリフを言おう(？)"}
     else:
