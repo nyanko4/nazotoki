@@ -29,11 +29,6 @@
       font-size: 16px;
       font-weight: bold;
     }
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
     a {
       color: inherit;        /* テキストと同じ色にする */
       text-decoration: none; /* 下線を消す */
@@ -67,6 +62,25 @@
 
   <div class="cell center" style="grid-row: 2; grid-column: 2;">
     四方の答え和を答えなさい
-      </div>
+    <form id="loginForm">
+  <input type="password" id="password" name="password" placeholder="答えを入力してください">
+  <button type="submit">送信</button>
+</form>
+  </div>
+<script>
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const password = document.getElementById('password').value;
+
+  const res = await fetch('/api/answer', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ password })
+  });
+
+  const data = await res.json();
+  alert(data.message);
+});
+</script>
 </body>
 </html>
