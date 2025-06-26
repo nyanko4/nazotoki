@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>共通漢字クイズ</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .quiz-box {
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .quiz-item {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .question {
+      margin-bottom: 10px;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 5px;
+      font-weight: bold;
+      color: #0066cc;
+    }
+
+    button {
+      margin-top: 5px;
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>共通漢字クイズ</h1>
+  それぞれに当てはまる全ての漢字の画数の和を答えとする
+  <p style="opacity: 0.05;">ヒントが欲しかったらなにかしましょう</p>
+
+  <div class="quiz-box">
+    <div class="quiz-item">
+      <div class="question">①「□花」「□車」「□山」 → □ に入る漢字は？</div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="question">②「□校」「□長」「大□」 → □ に入る漢字は？</div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="question">③「□会」「京□」「□心」 → □ に入る漢字は？</div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="question">④「□間」「□代」「□刻」 → □ に入る漢字は？</div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="question">⑤「□紙」「□帳」「握□」 → □ に入る漢字は？</div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>クロスワード</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 28px;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 10px auto;
+    }
+
+    td {
+      border: 1px solid #444;
+      width: 65px;
+      height: 65px;
+      position: relative;
+      background-color: white;
+    }
+
+    input {
+      width: 95%;
+      height: 100%;
+      font-size: 28px;
+      text-align: center;
+      border: none;
+      background-color: transparent;
+    }
+
+
+    .black {
+      background-color: #333;
+    }
+
+    .problem {
+      background-color: #c2f7ff;
+    }
+    .problem-sign {
+      position: absolute;
+      top: 2px;
+      right: 4px;
+      font-size: 10px;
+      color: #999;
+    }
+
+    .number {
+      position: absolute;
+      top: 2px;
+      left: 4px;
+      font-size: 10px;
+      color: #999;
+    }
+
+    #clues {
+      max-width: 400px;
+      text-align: left;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  ア、イ、ウ、エ、オに当てはまる字を数字に変え和を答えとする
+  <p style="opacity: 0.05;">ヒントが欲しかったらなにかしましょう</p>
+<table>
+  <tbody>
+    <tr>
+      <td><div class="number">1</div><input maxlength="1"></td>
+      <td><input maxlength="1"></td>
+      <td class="black"></td>
+      <td><div class="number">2</div><input maxlength="1"></td>
+      <td class="problem"><div class="number">3</div><div class="problem-sign">ア</div><input maxlength="1"></td>
+      <td><input maxlength="1"></td>
+      <td class="black"></td>
+    </tr>
+    <tr>
+      <td><input maxlength="1"></td>
+      <td class="black"></td>
+      <td><div class="number">4</div><input maxlength="1"></td> 
+      <td><input maxlength="1"></td> 
+      <td><input maxlength="1"></td> 
+      <td class="black"></td>
+      <td><div class="number">5</div><input maxlength="1"></td> 
+    </tr> 
+    <tr> 
+      <td class="problem"><div class="problem-sign">イ</div><div class="number">6</div><input maxlength="1"></td> 
+      <td><input maxlength="1"></td> 
+      <td><input maxlength="1"></td> 
+      <td class="black"></td>
+      <td class="black"></td> 
+      <td><div class="number">7</div><input maxlength="1"></td> 
+      <td><input maxlength="1"></td> 
+    </tr> 
+    <tr> 
+      <td><input maxlength="1"></td>
+      <td class="black"></td> 
+      <td><div class="number">8</div><input maxlength="1"></td> 
+      <td><div class="number">9</div><input maxlength="1"></td> 
+      <td><div class="number">10</div><input maxlength="1"></td> 
+      <td class="black"></td> 
+      <td class="problem"><div class="problem-sign">ウ</div><input maxlength="1"></td> 
+    </tr> 
+    <tr> 
+      <td class="black"></td> 
+      <td><div class="number">11</div><input maxlength="1"></td>
+      <td ><input maxlength="1"></td> 
+      <td><input maxlength="1"></td> 
+      <td><input maxlength="1"></td>
+      <td class="problem"><div class="problem-sign">エ</div><input maxlength="1"></td> 
+      <td><input maxlength="1"></td> 
+    </tr> 
+    <tr> 
+      <td><div class="number">12</div><input maxlength="1"></td> 
+      <td><input maxlength="1"></td> 
+      <td><input maxlength="1"></td> 
+      <td><input maxlength="1"></td> 
+      <td><input maxlength="1"></td> 
+      <td class="black"></td> 
+      <td class="black"></td> 
+    </tr> 
+    <tr> 
+      <td class="black"></td> 
+      <td class="problem"><div class="problem-sign">オ</div><input maxlength="1"></td> 
+      <td class="black"></td> 
+      <td><input maxlength="1"></td>
+      <td class="black"></td> 
+      <td class="black"></td> 
+      <td class="black"></td> 
+    </tr>
+  </tbody>
+</table>
+
+<div id="clues">
+  <h3>タテのカギ</h3>
+  <ul>
+    <li><strong>1:</strong>盤上で知恵と戦略を競う、和風チェス</li>
+    <li><strong>2:</strong> 俳句や短歌で重要な季節の区分</li>
+    <li><strong>3:</strong> 刀身を保護するための外殻</li>
+    <li><strong>4:</strong> 春に目や鼻に大打撃を与える黄色い粒</li>
+    <li><strong>5:</strong> 国家どうしが武力で争うこと</li>
+    <li><strong>9:</strong> 興味や注意が向いていること。無関心の反対</li>
+    <li><strong>10:</strong> 指で指すように、進む方向を示す言葉</li>
+    <li><strong>11:</strong> コスプレとも呼ばれることがある</li>
+  </ul>
+  <h3>ヨコのカギ</h3>
+  <ul>
+    <li><strong>1:</strong> 奈良公園でよく見かける草食動物</li>
+    <li><strong>2:</strong> キリスト教で儀式を行う聖職者</li>
+    <li><strong>4:</strong> 牛丼を中心とした全国チェーンの飲食店</li>
+    <li><strong>6:</strong> 土用の丑の日に食べる魚</li>
+    <li><strong>7:</strong> 経験や直感で物事を判断する力</li>
+    <li><strong>8:</strong> 稲を守るために立たされる人形</li>
+    <li><strong>11:</strong> 飛んでくる見えない粒子に負ける体質</li>
+    <li><strong>12:</strong> プライドとも言える、自己への誇り</li>
+  </ul>
+</div>
+
+</body>
+</html>

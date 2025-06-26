@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>数独</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    table {
+      border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    td {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      border: 1px solid #999;
+      background-color: white;
+      position: relative;
+    }
+
+    td input {
+      width: 95%;
+      height: 100%;
+      font-size: 24px;
+      text-align: center;
+      border: none;
+      background-color: transparent;
+    }
+
+    td input:focus {
+      outline: 2px solid #4287f5;
+      background-color: #eef6ff;
+    }
+
+    .fixed {
+      background-color: #e0e0e0;
+      font-size: 24px;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    .light {
+      background-color: #c2f7ff !important;
+    }
+
+    td:nth-child(3), td:nth-child(6) {
+      border-right: 2px solid #000;
+    }
+
+    tr:nth-child(3) td, tr:nth-child(6) td {
+      border-bottom: 2px solid #000;
+    }
+
+    @media (max-width: 600px) {
+      td {
+        width: 40px;
+        height: 40px;
+      }
+
+      td input, .fixed {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>数独</h2>
+  水色の部分の数字の和を答えとする<br>
+  <p style="opacity: 0.05;">ヒントが欲しかったらなにかしましょう</p>
+  <table id="sudoku-board">
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const puzzle = [
+        [0, 0, 0, 0, 9, 0, 0, 1, 6],
+        [1, 8, 0, 6, 0, 7, 0, 0, 0],
+        [0, 0, 0, 5, 0, 0, 7, 0, 4],
+        [3, 0, 0, 9, 8, 6, 0, 5, 0],
+        [0, 0, 5, 0, 0, 4, 0, 6, 1],
+        [6, 7, 0, 1, 0, 0, 9, 4, 3],
+        [7, 5, 0, 0, 0, 0, 4, 0, 9],
+        [0, 0, 0, 7, 0, 9, 1, 0, 8],
+        [0, 9, 0, 0, 0, 2, 0, 0, 5],
+
+    ];
+
+    // 固定ハイライト位置（行0〜8、空白マスの中から選定）
+    const Positions = [
+      { r: 0, c: 1 },
+      { r: 1, c: 4 },
+      { r: 2, c: 5 },
+      { r: 3, c: 1 },
+      { r: 4, c: 6 },
+      { r: 5, c: 2 },
+      { r: 6, c: 4 },
+      { r: 7, c: 7 },
+      { r: 8, c: 3 }
+    ];
+
+    const tbody = document.querySelector("tbody");
+
+    for (let r = 0; r < 9; r++) {
+      const tr = document.createElement("tr");
+      for (let c = 0; c < 9; c++) {
+        const td = document.createElement("td");
+        const val = puzzle[r][c];
+
+        // ハイライト対象か確認
+        const islighted = Positions.some(pos => pos.r === r && pos.c === c);
+        if (islighted) td.classList.add("light");
+
+        if (val !== 0) {
+          td.textContent = val;
+          td.classList.add("fixed");
+        } else {
+          const input = document.createElement("input");
+          input.setAttribute("maxlength", "1");
+          input.setAttribute("inputmode", "numeric");
+          td.appendChild(input);
+        }
+
+        tr.appendChild(td);
+      }
+      tbody.appendChild(tr);
+    }
+  </script>
+</body>
+</html>
